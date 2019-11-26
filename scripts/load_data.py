@@ -1,3 +1,4 @@
+import json
 import requests
 import sys
 
@@ -20,3 +21,6 @@ for id in range(1, 152): # non-inclusive range end
     pokemon_data.append({ "id": id, "name": response_json['name'], "moves": moves })
 
 print(pokemon_data)
+
+with open("./data/pokemon_data.json", 'w') as f:
+    json.dump(pokemon_data, f)
