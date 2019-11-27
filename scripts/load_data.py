@@ -18,7 +18,8 @@ for id in range(1, 152): # non-inclusive range end
             if detail['version_group']['name'] == 'red-blue':
                 moves.append(move['move']['name'])
 
-    pokemon_data.append({ "id": id, "name": response_json['name'], "moves": moves })
+    types = [t['type']['name'] for t in response_json['types']]
+    pokemon_data.append({ "id": id, "name": response_json['name'], "moves": moves, "types": types })
 
 print(pokemon_data)
 
